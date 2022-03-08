@@ -486,28 +486,10 @@ view: Store_and_Web_Sales_Analysis {
     }
 
 
-    measure: m_SS_SALES_PRICE_sum {
-        label: "TEST 2"
-        type: sum
-        sql: ${TABLE}.`m_SS_SALES_PRICE_sum`;;
-    }
-
-    measure: m_SS_LIST_PRICE_sum {
-        label: "TEST 3"
-        type: sum
-        sql: ${TABLE}.`m_SS_LIST_PRICE_sum`;;
-    }
-
     measure: m_SS_COUPON_AMT_sum {
         label: "YOUSSEF"
         type: sum
         sql: ${TABLE}.`m_SS_COUPON_AMT_sum`;;
-    }
-
-    measure: m_SS_SOLD_TIME_SK_sum {
-        label: "test measure"
-        type: sum
-        sql: ${TABLE}.`m_SS_SOLD_TIME_SK_sum`;;
     }
 
     measure: Average_Unit_Net_Profit {
@@ -633,14 +615,6 @@ view: Store_and_Web_Sales_Analysis {
         sql: ${TABLE}.`m_SS Row Counter_sum`;;
     }
 
-    measure: TEST_MEASURE_2 {
-        label: "TEST MEASURE 2"
-        group_label: "Total Sales Measures"
-        description: "Description"
-        type: sum
-        sql: ${TABLE}.`TEST MEASURE 2`;;
-    }
-
     measure: Total__Ext_Sales_Price {
         label: "Total  Ext Sales Price"
         group_label: "Total Sales Measures"
@@ -704,18 +678,18 @@ view: Store_and_Web_Sales_Analysis {
         sql: ${TABLE}.`Total Quantity Sold`;;
     }
 
-    measure: m_SS_ADDR_SK_sum {
-        label: "test measure"
-        group_label: "Total Sales Measures"
-        type: sum
-        sql: ${TABLE}.`m_SS_ADDR_SK_sum`;;
-    }
-
     measure: Average_Web_Unit_Net_Profit {
         label: "Average Web Unit Net Profit"
         group_label: "Web Sales Measures"
         type: average
         sql: ${TABLE}.`Average Web Unit Net Profit`;;
+    }
+
+    measure: TEST_DEMO {
+        label: "TEST DEMO"
+        group_label: "Web Sales Measures"
+        type: sum
+        sql: ${TABLE}.`TEST DEMO`;;
     }
 
     measure: m_WS_EXT_SALES_PRICE_avg {
