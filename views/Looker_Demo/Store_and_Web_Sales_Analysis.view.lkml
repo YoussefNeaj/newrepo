@@ -486,6 +486,12 @@ view: Store_and_Web_Sales_Analysis {
     }
 
 
+    measure: m_SS_SOLD_TIME_SK_sum {
+        label: "test measure"
+        type: sum
+        sql: ${TABLE}.`m_SS_SOLD_TIME_SK_sum`;;
+    }
+
     measure: Average_Unit_Net_Profit {
         label: "Average Unit Net Profit"
         group_label: "Store Sales Measures"
@@ -670,6 +676,13 @@ view: Store_and_Web_Sales_Analysis {
         group_label: "Total Sales Measures"
         type: average
         sql: ${TABLE}.`Total Quantity Sold`;;
+    }
+
+    measure: m_SS_ADDR_SK_sum {
+        label: "test measure"
+        group_label: "Total Sales Measures"
+        type: sum
+        sql: ${TABLE}.`m_SS_ADDR_SK_sum`;;
     }
 
     measure: Average_Web_Unit_Net_Profit {
