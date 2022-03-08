@@ -486,6 +486,12 @@ view: Store_and_Web_Sales_Analysis {
     }
 
 
+    measure: m_SS_SALES_PRICE_sum {
+        label: "TEST 2"
+        type: sum
+        sql: ${TABLE}.`m_SS_SALES_PRICE_sum`;;
+    }
+
     measure: m_SS_SOLD_TIME_SK_sum {
         label: "test measure"
         type: sum
