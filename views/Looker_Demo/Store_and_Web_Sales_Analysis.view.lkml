@@ -498,6 +498,12 @@ view: Store_and_Web_Sales_Analysis {
         sql: ${TABLE}.`m_SS_LIST_PRICE_sum`;;
     }
 
+    measure: m_SS_COUPON_AMT_sum {
+        label: "YOUSSEF"
+        type: sum
+        sql: ${TABLE}.`m_SS_COUPON_AMT_sum`;;
+    }
+
     measure: m_SS_SOLD_TIME_SK_sum {
         label: "test measure"
         type: sum
