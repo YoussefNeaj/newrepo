@@ -633,6 +633,14 @@ view: Store_and_Web_Sales_Analysis {
         sql: ${TABLE}.`m_SS Row Counter_sum`;;
     }
 
+    measure: TEST_MEASURE_2 {
+        label: "TEST MEASURE 2"
+        group_label: "Total Sales Measures"
+        description: "Description"
+        type: sum
+        sql: ${TABLE}.`TEST MEASURE 2`;;
+    }
+
     measure: Total__Ext_Sales_Price {
         label: "Total  Ext Sales Price"
         group_label: "Total Sales Measures"
