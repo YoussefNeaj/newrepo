@@ -32,152 +32,98 @@ view: Prespective {
         sql: ${TABLE}.`Color Level`;;
     }
 
-    dimension: ORDER_d_half_year {
-        label: "ORDER Half Year"
+    dimension: d_half_year {
+        label: "Half Year"
         group_label: "Date Dimension"
         type: date_time
-        sql: ${TABLE}.`ORDER d_half_year`;;
+        sql: ${TABLE}.`d_half_year`;;
     }
 
-    dimension: ORDER_d_quarter {
-        label: "ORDER Quarter"
+    dimension: d_quarter {
+        label: "Quarter"
         group_label: "Date Dimension"
         type: date_time
-        sql: ${TABLE}.`ORDER d_quarter`;;
+        sql: ${TABLE}.`d_quarter`;;
     }
 
-    dimension: SHIP_d_half_year {
-        label: "SHIP Half Year"
-        group_label: "Date Dimension"
-        type: date_time
-        sql: ${TABLE}.`SHIP d_half_year`;;
-    }
-
-    dimension: SHIP_d_quarter {
-        label: "SHIP Quarter"
-        group_label: "Date Dimension"
-        type: date_time
-        sql: ${TABLE}.`SHIP d_quarter`;;
-    }
-
-    dimension: Date_Hierarchy__weeks__ORDER_Date_Hierarchy__weeks_ {
-        label: " ORDER Date Key"
-        group_label: "Date Dimension.ORDER Date Hierarchy (weeks)"
+    dimension: Datecustom_Hierarchy_Date_Key {
+        label: " Date Key"
+        group_label: "Date Dimension.Date Hierarchy"
         type: date
-        sql: ${TABLE}.`ORDER Date Hierarchy (weeks)`;;
+        sql: ${TABLE}.`Date Key`;;
     }
 
-    dimension: Date_Hierarchy__weeks__ORDER_Half_Year_Of_Year_Name {
-        label: "    ORDER Half Year Of Year Name"
-        group_label: "Date Dimension.ORDER Date Hierarchy (weeks)"
+    dimension: Datecustom_Hierarchy_Half_Year_Name {
+        label: "    Half Year Name"
+        group_label: "Date Dimension.Date Hierarchy"
         type: string
         allow_fill: no
-        sql: ${TABLE}.`ORDER Half Year Of Year Name`;;
-        drill_fields: [Date_Hierarchy__weeks__ORDER_Month_Name_2]
+        sql: ${TABLE}.`Half Year Name`;;
+        drill_fields: [Datecustom_Hierarchy_Quarter_Name]
     }
 
-    dimension: Date_Hierarchy__weeks__ORDER_Month_Name_2 {
-        label: "   ORDER Month Name"
-        group_label: "Date Dimension.ORDER Date Hierarchy (weeks)"
+    dimension: Datecustom_Hierarchy_Month_Name {
+        label: "  Month Name"
+        group_label: "Date Dimension.Date Hierarchy"
         type: date_month
-        sql: ${TABLE}.`ORDER Month Name 2`;;
-        drill_fields: [Date_Hierarchy__weeks__ORDER_Week_Of_Year_Name]
+        sql: ${TABLE}.`Month Name`;;
+        drill_fields: [Datecustom_Hierarchy_Date_Key]
     }
 
-    dimension: Date_Hierarchy__weeks__ORDER_Week_Of_Year_Name {
-        label: "  ORDER Week Of Year Name"
-        group_label: "Date Dimension.ORDER Date Hierarchy (weeks)"
+    dimension: Datecustom_Hierarchy_Quarter_Name {
+        label: "   Quarter Name"
+        group_label: "Date Dimension.Date Hierarchy"
+        type: date_quarter
+        sql: ${TABLE}.`Quarter Name`;;
+        drill_fields: [Datecustom_Hierarchy_Month_Name]
+    }
+
+    dimension: Datecustom_Hierarchy_Year_Name {
+        label: "     Year Name"
+        group_label: "Date Dimension.Date Hierarchy"
+        type: date_year
+        sql: ${TABLE}.`Year Name`;;
+        drill_fields: [Datecustom_Hierarchy_Half_Year_Name]
+    }
+
+    dimension: Date_Hierarchy__weeks_ {
+        label: " Date Key"
+        group_label: "Date Dimension.Date Hierarchy (weeks)"
+        type: date
+        sql: ${TABLE}.`Date Hierarchy (weeks)`;;
+    }
+
+    dimension: Date_Hierarchy__weeks__Half_Year_Of_Year_Name {
+        label: "    Half Year Of Year Name"
+        group_label: "Date Dimension.Date Hierarchy (weeks)"
+        type: string
+        allow_fill: no
+        sql: ${TABLE}.`Half Year Of Year Name`;;
+        drill_fields: [Date_Hierarchy__weeks__Month_Name_2]
+    }
+
+    dimension: Date_Hierarchy__weeks__Month_Name_2 {
+        label: "   Month Name"
+        group_label: "Date Dimension.Date Hierarchy (weeks)"
+        type: date_month
+        sql: ${TABLE}.`Month Name 2`;;
+        drill_fields: [Date_Hierarchy__weeks__Week_Of_Year_Name]
+    }
+
+    dimension: Date_Hierarchy__weeks__Week_Of_Year_Name {
+        label: "  Week Of Year Name"
+        group_label: "Date Dimension.Date Hierarchy (weeks)"
         type: date_week
-        sql: ${TABLE}.`ORDER Week Of Year Name`;;
-        drill_fields: [Date_Hierarchy__weeks__ORDER_Date_Hierarchy__weeks_]
+        sql: ${TABLE}.`Week Of Year Name`;;
+        drill_fields: [Date_Hierarchy__weeks_]
     }
 
-    dimension: Date_Hierarchy__weeks__ORDER_Year_Name_2 {
-        label: "     ORDER Year Name"
-        group_label: "Date Dimension.ORDER Date Hierarchy (weeks)"
+    dimension: Date_Hierarchy__weeks__Year_Name_2 {
+        label: "     Year Name"
+        group_label: "Date Dimension.Date Hierarchy (weeks)"
         type: date_year
-        sql: ${TABLE}.`ORDER Year Name 2`;;
-        drill_fields: [Date_Hierarchy__weeks__ORDER_Half_Year_Of_Year_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_ORDER_Date_Key {
-        label: " ORDER Date Key"
-        group_label: "Date Dimension.ORDER Datecustom Hierarchy"
-        type: date
-        sql: ${TABLE}.`ORDER Date Key`;;
-    }
-
-    dimension: Datecustom_Hierarchy_ORDER_Half_Year_Name {
-        label: "    ORDER Half Year Name"
-        group_label: "Date Dimension.ORDER Datecustom Hierarchy"
-        type: string
-        allow_fill: no
-        sql: ${TABLE}.`ORDER Half Year Name`;;
-        drill_fields: [Datecustom_Hierarchy_ORDER_Quarter_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_ORDER_Month_Name {
-        label: "  ORDER Month Name"
-        group_label: "Date Dimension.ORDER Datecustom Hierarchy"
-        type: date_month
-        sql: ${TABLE}.`ORDER Month Name`;;
-        drill_fields: [Datecustom_Hierarchy_ORDER_Date_Key]
-    }
-
-    dimension: Datecustom_Hierarchy_ORDER_Quarter_Name {
-        label: "   ORDER Quarter Name"
-        group_label: "Date Dimension.ORDER Datecustom Hierarchy"
-        type: date_quarter
-        sql: ${TABLE}.`ORDER Quarter Name`;;
-        drill_fields: [Datecustom_Hierarchy_ORDER_Month_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_ORDER_Year_Name {
-        label: "     ORDER Year Name"
-        group_label: "Date Dimension.ORDER Datecustom Hierarchy"
-        type: date_year
-        sql: ${TABLE}.`ORDER Year Name`;;
-        drill_fields: [Datecustom_Hierarchy_ORDER_Half_Year_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_SHIP_Date_Key {
-        label: " SHIP Date Key"
-        group_label: "Date Dimension.SHIP Datecustom Hierarchy"
-        type: date
-        sql: ${TABLE}.`SHIP Date Key`;;
-    }
-
-    dimension: Datecustom_Hierarchy_SHIP_Half_Year_Name {
-        label: "    SHIP Half Year Name"
-        group_label: "Date Dimension.SHIP Datecustom Hierarchy"
-        type: string
-        allow_fill: no
-        sql: ${TABLE}.`SHIP Half Year Name`;;
-        drill_fields: [Datecustom_Hierarchy_SHIP_Quarter_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_SHIP_Month_Name {
-        label: "  SHIP Month Name"
-        group_label: "Date Dimension.SHIP Datecustom Hierarchy"
-        type: date_month
-        sql: ${TABLE}.`SHIP Month Name`;;
-        drill_fields: [Datecustom_Hierarchy_SHIP_Date_Key]
-    }
-
-    dimension: Datecustom_Hierarchy_SHIP_Quarter_Name {
-        label: "   SHIP Quarter Name"
-        group_label: "Date Dimension.SHIP Datecustom Hierarchy"
-        type: date_quarter
-        sql: ${TABLE}.`SHIP Quarter Name`;;
-        drill_fields: [Datecustom_Hierarchy_SHIP_Month_Name]
-    }
-
-    dimension: Datecustom_Hierarchy_SHIP_Year_Name {
-        label: "     SHIP Year Name"
-        group_label: "Date Dimension.SHIP Datecustom Hierarchy"
-        type: date_year
-        sql: ${TABLE}.`SHIP Year Name`;;
-        drill_fields: [Datecustom_Hierarchy_SHIP_Half_Year_Name]
+        sql: ${TABLE}.`Year Name 2`;;
+        drill_fields: [Date_Hierarchy__weeks__Half_Year_Of_Year_Name]
     }
 
     dimension: Geography_Dimension_Hierarchy_Country {
@@ -250,6 +196,13 @@ view: Prespective {
         group_label: "Measures"
         type: sum
         sql: ${TABLE}.`m_Sales Tax_sum`;;
+    }
+
+    measure: m_taxamt_avg {
+        label: "Tax Amount -AVG"
+        group_label: "Measures"
+        type: average
+        sql: ${TABLE}.`m_taxamt_avg`;;
     }
 
     measure: m_unitprice_avg {
