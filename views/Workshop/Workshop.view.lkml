@@ -273,4 +273,11 @@ view: Workshop {
         sql: ${TABLE}.`m_Sales Tax_sum`;;
     }
 
+    measure: m_unitprice_avg {
+        label: "Unit Price - AVG"
+        group_label: "Measures"
+        type: average
+        sql: ${TABLE}.`m_unitprice_avg`;;
+    }
+
 }
