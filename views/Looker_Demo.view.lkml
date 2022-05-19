@@ -1,5 +1,5 @@
-view: Store_and_Web_Sales_Analysis {
-  label: "Store and Web Sales Analysis"
+view: Internet_Sales {
+  label: "Internet_Sales"
   sql_table_name: "Looker Demo"."Store and Web Sales Analysis";;
   dimension: Ss_Ticket_Number {
     label: "SS Ticket Number"

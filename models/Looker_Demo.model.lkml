@@ -15,8 +15,8 @@ label: "Looker Demo"
 include: "/views/Looker_Demo.view"
 
 
-explore: Store_and_Web_Sales_Analysis {
-  label: "Store and Web Sales Analysis"
+explore: Internet_Sales {
+  label: "Internet_Sales"
 }
 
 #
